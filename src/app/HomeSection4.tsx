@@ -218,41 +218,41 @@ const Column = ({
         >
           <div className="w-[100%] aspect-[1/1.05] relative flex justify-center">
             {item.index !== 4 && item.index !== 9 ? (
-              <div className="w-[210px] h-[237px]">
+              <div className="w-[210px] h-[237px] overflow-hidden relative">
                 <Image
                   src={`/images/speakers/${
                     item.index >= 3 ? item.index + 1 : item.index
                   }.png`}
                   fill
-                  className="object-cover object-center"
+                  className="object-cover object-center animated-card-image absolute left-0 top-0"
                   alt="person-image"
                 />
               </div>
             ) : (
-              <div className="w-[210px] h-[237px] bg-[black]">
+              <div className="w-[210px] h-[237px] bg-[black] overflow-hidden relative">
                 <Image
                   src={landingLogo.src}
                   fill
-                  className="object-contain object-center"
+                  className="object-contain object-center animated-card-image absolute left-0 top-0"
                   alt="person-image"
                 />
               </div>
             )}
           </div>
-          <div className="mt-3 font-neueMed text-[20px] fullscreen:text-5xl fullscreen:text-[53px]">
+          <div className="animated-text mt-3 font-neueMed text-[20px] fullscreen:text-5xl fullscreen:text-[53px]">
             {
               speakersData[item.index >= 3 ? item.index + 1 - 1 : item.index - 1]
                 .Name
             }
           </div>
-          <div className="font-neueMed text-[16px] fullscreen:text-4xl fullscreen:text-[42px]">
+          <div className="animated-text animated-text-delay-0.2s font-neueMed text-[16px] fullscreen:text-4xl fullscreen:text-[42px]">
             {
               speakersData[
-                item.index >= 3 ? item.index + 1 - 1 : item.index -1 
+                item.index >= 3 ? item.index + 1 - 1 : item.index -1
               ].Title.split("-")[0]
             }
           </div>
-          <div className="font-neueMed text-[14px] fullscreen:text-[37px] border-solid border-[1px] border-black px-1 fullscreen:px-[10px] mt-1 fullscreen:mb-[37px]">
+          <div className="animated-text animated-text-delay-0.4s font-neueMed text-[14px] fullscreen:text-[37px] border-solid border-[1px] border-black px-1 fullscreen:px-[10px] mt-1 fullscreen:mb-[37px]">
             {
               speakersData[
                 item.index >= 3 ? item.index + 1 - 1 : item.index - 1
@@ -271,7 +271,7 @@ export default function HomeSection4() {
 
   return (
     <div className="w-full flex relative mb-[73px] max-[768px]:mb-20">
-      <div className="z-30 font-neueMed text-[64px] fullscreen:text-[170px] fullscreen:leading-[192px] tablet:w-[80%] w-full h-[72px] max-[768px]:!text-[28px] max-[768px]:leading-[36px] px-14 max-[768px]:px-4 py-6 leading-[64px] absolute pt-8 fullscreen:pt-[85px] max-[415px]:pt-6">
+      <div className="animated-text z-30 font-neueMed text-[64px] fullscreen:text-[170px] fullscreen:leading-[192px] tablet:w-[80%] w-full h-[72px] max-[768px]:!text-[28px] max-[768px]:leading-[36px] px-14 max-[768px]:px-4 py-6 leading-[64px] absolute pt-8 fullscreen:pt-[85px] max-[415px]:pt-6">
         {isMobile ? (
           <>Vietnam Tech Impact <br/>Summit Speakers</>
         ) : (
