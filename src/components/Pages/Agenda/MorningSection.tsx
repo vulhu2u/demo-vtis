@@ -1,9 +1,13 @@
 'use client';
 
+<<<<<<< HEAD
 import Speaker1 from '@/assets/images/speakers/1.png';
 import Speaker2 from '@/assets/images/agenda/speaker.png';
 
 
+=======
+import Speaker from '@/assets/images/agenda/speaker.png';
+>>>>>>> e3fa37643102cc01eef9cee62d968dc98643795c
 
 import Image, { StaticImageData } from "next/image";
 import { useMemo, useState } from "react";
@@ -13,6 +17,7 @@ interface Props {
   activeTab?: string;
 }
 
+<<<<<<< HEAD
 interface Speaker {
   title: string;
   time: string;
@@ -78,11 +83,106 @@ export default function MorningSection({ activeTab }: Props) {
       title: 'Panel Discussion with Web 2 Investment Funds',
       time: '10:30 - 11:30',
       description: 'Discussion with representatives from SSIAM, Thinkzone, and Vina Capital on evaluating and investing in technology startup projects',
+=======
+export default function MorningSection({activeTab}:Props) {
+  const [hoveredImageMorning, setHoveredImageMorning] = useState<StaticImageData | null>(null);
+
+
+
+  const listSpeakerMorning = [
+    {
+      time: '08:30 - 09:00',
+      description: 'Guest Reception and Registration',
+      image: Speaker,
+    },
+    {
+      time: '09:00 - 09:10',
+      description: 'Opening Speech. Nguyễn Duy Hưng, Chairman of SSI & SSID',
+      image: Speaker,
+    },
+    {
+      time: '09:10 - 09:40',
+      description: 'Keynote: The Power of Technology for Vietnams Economy Trương Gia Bình, Chairman of FPT',
+      image: Speaker,
+    },
+    {
+      time: '09:40 - 10:10',
+      description: 'Keynote: AI in Finance: From Vision to Practice',
+      image: Speaker,
+    },
+    {
+      time: '10:10 - 10:40',
+      description: 'Guest Reception and Registration',
+      image: Speaker,
+    },
+    {
+      time: '10:40 - 11:10',
+      description: 'Keynote: AI in Finance: From Vision to Practice',
+      image: Speaker,
+    },
+    {
+      time: '11:10 - 11:40',
+      description: 'Q&A with the Speakers',
+      image: Speaker,
+    },
+    {
+      time: '11:40 - 13:30',
+      description: 'Lunch Break',
+      image: Speaker,
+    },
+
+  ];
+
+  const listSpeakerMorning2 = [
+    {
+      time: '08:30 - 09:00',
+      description: 'Guest Reception and Registration',
+      image: Speaker,
+    },
+    {
+      time: '09:00 - 09:10',
+      description: 'Opening Speech. Nguyễn Duy Hưng, Chairman of SSI & SSID',
+      image: Speaker,
+    },
+    {
+      time: '09:10 - 09:40',
+      description: 'Keynote: The Power of Technology for Vietnams Economy Trương Gia Bình, Chairman of FPT',
+      image: Speaker,
+    },
+    {
+      time: '09:40 - 10:10',
+      description: 'Keynote: AI in Finance: From Vision to Practice',
+      image: Speaker,
+    },
+    {
+      time: '08:30 - 09:00',
+      description: 'Guest Reception and Registration',
+      image: Speaker,
+    },
+    {
+      time: '09:00 - 09:10',
+      description: 'Opening Speech. Nguyễn Duy Hưng, Chairman of SSI & SSID',
+      image: Speaker,
+    },
+    {
+      time: '09:10 - 09:40',
+      description: 'Keynote: The Power of Technology for Vietnams Economy Trương Gia Bình, Chairman of FPT',
+      image: Speaker,
+    },
+    {
+      time: '09:40 - 10:10',
+      description: 'Keynote: AI in Finance: From Vision to Practice',
+      image: Speaker,
+>>>>>>> e3fa37643102cc01eef9cee62d968dc98643795c
     },
   ];
 
   const listData = useMemo(() => {
+<<<<<<< HEAD
     if (activeTab === 'Day 1') {
+=======
+    if (activeTab === 'Day 1'){
+>>>>>>> e3fa37643102cc01eef9cee62d968dc98643795c
       return listSpeakerMorning;
     }
     return listSpeakerMorning2;
@@ -90,6 +190,10 @@ export default function MorningSection({ activeTab }: Props) {
   }, [activeTab, listSpeakerMorning, listSpeakerMorning2]);
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> e3fa37643102cc01eef9cee62d968dc98643795c
   return (
 
       <div
@@ -101,8 +205,12 @@ export default function MorningSection({ activeTab }: Props) {
 
         {/* Hovered Image - displayed only if hoveredImage is set */}
         {hoveredImageMorning && (
+<<<<<<< HEAD
             <div
                 className="hidden tablet:block absolute left-[400px] fullscreen:left-[650px] opacity-100 transition-opacity duration-300">
+=======
+            <div className="hidden tablet:block absolute left-[300px] fullscreen:left-[650px] opacity-100 transition-opacity duration-300">
+>>>>>>> e3fa37643102cc01eef9cee62d968dc98643795c
               <Image
                   src={hoveredImageMorning}
                   alt="Speaker"
@@ -119,6 +227,7 @@ export default function MorningSection({ activeTab }: Props) {
               <div
                   key={index}
                   className="relative group h-full flex flex-col"
+<<<<<<< HEAD
                   onMouseEnter={() => speaker.image ? setHoveredImageMorning(speaker.image) : setHoveredImageMorning(null)}
                   onMouseLeave={() => setHoveredImageMorning(null)}
               >
@@ -129,6 +238,14 @@ export default function MorningSection({ activeTab }: Props) {
                     <p className=''>{speaker.title}</p>
                   </div>
                   <p className='pl-5' dangerouslySetInnerHTML={{ __html: speaker.description.replaceAll('\n', '<br />') }}/>
+=======
+                  onMouseEnter={() => setHoveredImageMorning(speaker.image)}  // Set image on hover
+                  onMouseLeave={() => setHoveredImageMorning(null)}           // Clear image on leave
+              >
+                <div className="flex tablet:group-hover:bg-white tablet:group-hover:text-black py-6 px-2 fullscreen:py-[64px] fullscreen:text-[48px] font-neueMed">
+                  <p className=" w-full tablet:max-w-[353px] fullscreen:max-w-[941px] max-w-[116px] ">{speaker.time}</p>
+                  <p className="w-full">{speaker.description}</p>
+>>>>>>> e3fa37643102cc01eef9cee62d968dc98643795c
                 </div>
                 {index !== listData.length - 1 && (
                     <hr className="w-full h-[1px] border-[#333]"/>
