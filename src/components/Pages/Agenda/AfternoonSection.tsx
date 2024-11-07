@@ -1,10 +1,7 @@
 'use client';
 
 import Speaker from '@/assets/images/agenda/speaker.png';
-<<<<<<< HEAD
 import Speaker1 from '@/assets/images/speakers/4.png';
-=======
->>>>>>> e3fa37643102cc01eef9cee62d968dc98643795c
 
 import Image, { StaticImageData } from "next/image";
 import { useMemo, useState } from "react";
@@ -14,7 +11,6 @@ interface Props {
   activeTab?: string;
 }
 
-<<<<<<< HEAD
 interface Speaker {
   title: string;
   time: string;
@@ -22,13 +18,10 @@ interface Speaker {
   image?: StaticImageData;
 }
 
-=======
->>>>>>> e3fa37643102cc01eef9cee62d968dc98643795c
 
 export default function AfternoonSection({activeTab} : Props) {
   const [hoveredImageAfternoon, setHoveredImageAfternoon] = useState<StaticImageData | null>(null);
 
-<<<<<<< HEAD
   const listSpeakerAfternoon : Speaker[] = [
     {
       title: 'Keynote from Sponsor',
@@ -50,39 +43,11 @@ export default function AfternoonSection({activeTab} : Props) {
       title: 'Panel Discussion with Vietnamese Startups in the Blockchain Field',
       time: '16:15 - 17:30',
       description: 'Discussion with representatives from Onus, ATX, Nami, and Icetea Labs',
-=======
-  const listSpeakerAfternoon = [
-    {
-      time: '13:30 - 14:30',
-      description: 'Panel Discussion: The Future of AI: Traditional vs. Blockchain Suggested Topic: "Traditional AI and Blockchain AI: Opportunities for Collaboration and Competition Content: Discuss how traditional AI and Blockchain AI can complement each other, opportunities for innovation, and competitive potential within the tech ecosystem.',
-      image: Speaker,
-    },
-    {
-      time: '14:30 - 15:00',
-      description: 'Keynote: The Future of Blockchain and AI for the Economy',
-      image: Speaker,
-    },
-    {
-      time: '15:00 - 15:30',
-      description: 'Keynote: Blockchain Ecosystem and Its Impact on the Financial Economy',
-      image: Speaker,
-    },
-    {
-      time: '15:30 - 16:10',
-      description: 'Keynote: The State of Digital Assets in Vietnam',
-      image: Speaker,
-    },
-    {
-      time: '16:10 - 17:00',
-      description: 'Panel Discussion: Legal Framework for Digital Assets in Vietnam Topic: Legal Framework and Opportunities for Collaboration in the Digital Asset Sector.',
-      image: Speaker,
->>>>>>> e3fa37643102cc01eef9cee62d968dc98643795c
     }
 
   ];
 
 
-<<<<<<< HEAD
   const listSpeakerAfternoon2 : Speaker[] = [
     {
       title: 'Panel with Web3 Investment Funds',
@@ -116,33 +81,6 @@ export default function AfternoonSection({activeTab} : Props) {
       time: '17:00 - 17:30',
       description:
           'Summary and closing remarks',
-=======
-  const listSpeakerAfternoon2 = [
-    {
-      time: '13:30 - 14:30',
-      description: 'Panel Discussion: The Future of AI: Traditional vs. Blockchain Suggested Topic: "Traditional AI and Blockchain AI: Opportunities for Collaboration and Competition Content: Discuss how traditional AI and Blockchain AI can complement each other, opportunities for innovation, and competitive potential within the tech ecosystem.',
-      image: Speaker,
-    },
-    {
-      time: '14:30 - 15:00',
-      description: 'Keynote: The Future of Blockchain and AI for the Economy',
-      image: Speaker,
-    },
-    {
-      time: '15:00 - 15:30',
-      description: 'Keynote: Blockchain Ecosystem and Its Impact on the Financial Economy',
-      image: Speaker,
-    },
-    {
-      time: '15:30 - 16:10',
-      description: 'Keynote: The State of Digital Assets in Vietnam',
-      image: Speaker,
-    },
-    {
-      time: '16:10 - 17:00',
-      description: 'Panel Discussion: Legal Framework for Digital Assets in Vietnam Topic: Legal Framework and Opportunities for Collaboration in the Digital Asset Sector.',
-      image: Speaker,
->>>>>>> e3fa37643102cc01eef9cee62d968dc98643795c
     }
   ];
 
@@ -166,11 +104,7 @@ export default function AfternoonSection({activeTab} : Props) {
         {/* Hovered Image - displayed only if hoveredImage is set */}
         {hoveredImageAfternoon && (
             <div
-<<<<<<< HEAD
                 className="hidden tablet:block absolute left-[400px] fullscreen:left-[650px] opacity-100 transition-opacity duration-300">
-=======
-                className="hidden tablet:block absolute left-[300px] fullscreen:left-[650px] opacity-100 transition-opacity duration-300">
->>>>>>> e3fa37643102cc01eef9cee62d968dc98643795c
 
               <Image
                   src={hoveredImageAfternoon}
@@ -188,7 +122,6 @@ export default function AfternoonSection({activeTab} : Props) {
               <div
                   key={index}
                   className="relative group h-full flex flex-col"
-<<<<<<< HEAD
                   onMouseEnter={() => speaker.image ? setHoveredImageAfternoon(speaker.image) : setHoveredImageAfternoon(null)}
                   onMouseLeave={() => setHoveredImageAfternoon(null)}
               >
@@ -200,15 +133,6 @@ export default function AfternoonSection({activeTab} : Props) {
                   </div>
                   <p className='pl-5'
                      dangerouslySetInnerHTML={{ __html: speaker.description.replaceAll('\n', '<br />') }}/>
-=======
-                  onMouseEnter={() => setHoveredImageAfternoon(speaker.image)}  // Set image on hover
-                  onMouseLeave={() => setHoveredImageAfternoon(null)}           // Clear image on leave
-              >
-                <div
-                    className="flex tablet:group-hover:bg-white tablet:group-hover:text-black py-6 px-2 fullscreen:py-[64px] fullscreen:text-[48px] font-neueMed">
-                  <p className=" w-full tablet:max-w-[353px] fullscreen:max-w-[941px] max-w-[116px] ">{speaker.time}</p>
-                  <p className=" w-full">{speaker.description}</p>
->>>>>>> e3fa37643102cc01eef9cee62d968dc98643795c
                 </div>
                 {index !== listData.length - 1 && (
                     <hr className="w-full h-[1px] border-[#333]"/>

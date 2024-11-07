@@ -23,15 +23,11 @@ const TierParners = ({
         {partners.map((p, pIndex) => (
           <div
             key={pIndex}
-<<<<<<< HEAD
             className={`${
               tier === "Title"
                 ? "xl:w-1/3 lg:w-1/5 w-1/2 aspect-[461/205]"
                 : "xl:w-1/5 lg:w-1/5 w-1/3 aspect-[275/160]"
             } " max-[768px]:aspect-[118/88] p-[2px] max-[768px]:p-[2px]" `}
-=======
-            className="w-1/3 sm:w-1/3 md:w-1/3 lg:w-1/4 xl:w-1/5 aspect-video max-[768px]:aspect-[118/88] p-[2px] max-[768px]:p-[2px]"
->>>>>>> e3fa37643102cc01eef9cee62d968dc98643795c
           >
             <div className="bg-[rgba(255,255,255,0.05)] w-full h-full flex items-center justify-center">
               <div className="relative w-[50%] aspect-video max-[768px]:w-[65%]">
@@ -57,39 +53,6 @@ const HomeSection6 = () => {
     <div className="bg-[#000000] flex flex-col gap-8 px-12 max-[768px]:px-0 py-[80px] fullscreen:pt-[213px] fullscreen:pb-[407px] pb-50">
       {/* {partners} */}
       <div className="w-full flex flex-col px-5">
-<<<<<<< HEAD
-=======
-        <div className="w-full font-neueMed text-[48px] text-[#fff] mb-8 fullscreen:mb-[85px] max-[768px]:text-[24px] fullscreen:text-[128px]">
-          Strategic partners
-        </div>
-        <div className="w-full flex flex-wrap gap-[5px] mb-20 fullscreen:mb-32">
-          <TierParners
-            partners={Array(4)
-              .fill("")
-              .map((_, i) => {
-                return {
-                  name: "Parner " + i,
-                  logo: `stategic-partners/partner-${i}.png`,
-                };
-              })}
-          />
-        </div>
-        <div className="w-full font-neueMed text-[48px] text-[#fff] mb-8 fullscreen:mb-[85px] max-[768px]:text-[24px] fullscreen:text-[128px]">
-          Event partners
-        </div>
-        <div className="w-full flex flex-wrap gap-[5px] mb-20 fullscreen:mb-32">
-          <TierParners
-            partners={Array(5)
-              .fill("")
-              .map((_, i) => {
-                return {
-                  name: "Parner " + i,
-                  logo: `event-partners/partner-${i}.png`,
-                };
-              })}
-          />
-        </div>
->>>>>>> e3fa37643102cc01eef9cee62d968dc98643795c
         <div className="w-full font-neueMed text-[48px] fullscreen:text-9xl text-[#fff] max-[768px]:text-[24px]">
           Key partners
         </div>
@@ -138,7 +101,6 @@ const HomeSection6 = () => {
                 };
               })}
           /> */}
-<<<<<<< HEAD
         </div>
         <div className="w-full font-neueMed text-[48px] text-[#fff] mb-8 fullscreen:mb-[85px] max-[768px]:text-[24px] fullscreen:text-[128px]">
           Strategic partners
@@ -170,9 +132,6 @@ const HomeSection6 = () => {
               })}
           />
         </div>
-=======
-        </div>
->>>>>>> e3fa37643102cc01eef9cee62d968dc98643795c
         {/* <div className="w-full font-neueMed text-[48px] text-[#fff] mb-5 fullscreen:mb-[85px] max-[768px]:text-[24px] fullscreen:text-9xl">
           Government Partner
         </div> */}
