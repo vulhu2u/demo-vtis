@@ -15,7 +15,7 @@ const TierParners = ({
   return (
     <div className="w-full flex flex-col">
       {tier && (
-        <div className="w-full font-neueMed text-[32px] max-[768px]:text-[18px] text-[#fff] mt-12 mb-4">
+        <div className="w-full font-neueMed text-[32px] max-[768px]:text-[18px] fullscreen:text-[85px] text-[#fff] mt-8 fullscreen:mt-32 mb-4 fullscreen:mb-[42px]">
           {tier}
         </div>
       )}
@@ -23,7 +23,11 @@ const TierParners = ({
         {partners.map((p, pIndex) => (
           <div
             key={pIndex}
-            className="w-1/3 sm:w-1/3 md:w-1/3 lg:w-1/4 xl:w-1/5 aspect-video max-[768px]:aspect-[118/88] p-[5px] max-[768px]:p-[2px]"
+            className={`${
+              tier === "Title"
+                ? "xl:w-1/3 lg:w-1/5 w-1/2 aspect-[461/205]"
+                : "xl:w-1/5 lg:w-1/5 w-1/3 aspect-[275/160]"
+            } " max-[768px]:aspect-[118/88] p-[2px] max-[768px]:p-[2px]" `}
           >
             <div className="bg-[rgba(255,255,255,0.05)] w-full h-full flex items-center justify-center">
               <div className="relative w-[50%] aspect-video max-[768px]:w-[65%]">
@@ -31,8 +35,9 @@ const TierParners = ({
                   src={`/images/${p.logo}`}
                   fill
                   alt="parner-logo"
-                  objectPosition="center"
-                  objectFit="contain"
+                  // objectPosition="center"
+                  // objectFit="contain"
+                  className="object-contain object-center"
                 />
               </div>
             </div>
@@ -45,31 +50,16 @@ const TierParners = ({
 
 const HomeSection6 = () => {
   return (
-    <div className="bg-[#000000] flex flex-col gap-8 px-12 max-[768px]:px-0 py-[80px] pb-50">
+    <div className="bg-[#000000] flex flex-col gap-8 px-12 max-[768px]:px-0 py-[80px] fullscreen:pt-[213px] fullscreen:pb-[407px] pb-50">
       {/* {partners} */}
       <div className="w-full flex flex-col px-5">
-        <div className="w-full font-neueMed text-[48px] text-[#fff] mb-8 max-[768px]:text-[24px]">
-          Strategic partners
-        </div>
-        <div className="w-full flex flex-wrap gap-[5px] mb-20">
-          <TierParners
-            partners={Array(5)
-              .fill("")
-              .map((_, i) => {
-                return {
-                  name: "Parner " + i,
-                  logo: `stategic-partners/partner-${i}.png`,
-                };
-              })}
-          />
-        </div>
-        <div className="w-full font-neueMed text-[48px] text-[#fff] max-[768px]:text-[24px]">
+        <div className="w-full font-neueMed text-[48px] fullscreen:text-9xl text-[#fff] max-[768px]:text-[24px]">
           Key partners
         </div>
-        <div className="w-full flex flex-col flex-wrap gap-10 mb-16">
+        <div className="w-full flex flex-col flex-wrap gap-10 mb-16 fullscreen:mb-[213px]">
           <TierParners
             tier="Title"
-            partners={Array(5)
+            partners={Array(3)
               .fill("")
               .map((_, i) => {
                 return {
@@ -80,7 +70,7 @@ const HomeSection6 = () => {
           />
           <TierParners
             tier="Platinum"
-            partners={Array(5)
+            partners={Array(3)
               .fill("")
               .map((_, i) => {
                 return {
@@ -91,7 +81,7 @@ const HomeSection6 = () => {
           />
           <TierParners
             tier="Gold"
-            partners={Array(5)
+            partners={Array(4)
               .fill("")
               .map((_, i) => {
                 return {
@@ -100,7 +90,7 @@ const HomeSection6 = () => {
                 };
               })}
           />
-          <TierParners
+          {/* <TierParners
             tier="Silver"
             partners={Array(5)
               .fill("")
@@ -110,12 +100,42 @@ const HomeSection6 = () => {
                   logo: `silver/partner-${i}.png`,
                 };
               })}
+          /> */}
+        </div>
+        <div className="w-full font-neueMed text-[48px] text-[#fff] mb-8 fullscreen:mb-[85px] max-[768px]:text-[24px] fullscreen:text-[128px]">
+          Strategic partners
+        </div>
+        <div className="w-full flex flex-wrap gap-[5px] mb-20 fullscreen:mb-32">
+          <TierParners
+            partners={Array(4)
+              .fill("")
+              .map((_, i) => {
+                return {
+                  name: "Parner " + i,
+                  logo: `stategic-partners/partner-${i}.png`,
+                };
+              })}
           />
         </div>
-        <div className="w-full font-neueMed text-[48px] text-[#fff] mb-5 max-[768px]:text-[24px]">
-          Government Partner
+        <div className="w-full font-neueMed text-[48px] text-[#fff] mb-8 fullscreen:mb-[85px] max-[768px]:text-[24px] fullscreen:text-[128px]">
+          Event partners
         </div>
-        <div className="w-full flex flex-wrap gap-[5px] mb-16">
+        <div className="w-full flex flex-wrap gap-[5px] mb-20 fullscreen:mb-32">
+          <TierParners
+            partners={Array(5)
+              .fill("")
+              .map((_, i) => {
+                return {
+                  name: "Parner " + i,
+                  logo: `event-partners/partner-${i}.png`,
+                };
+              })}
+          />
+        </div>
+        {/* <div className="w-full font-neueMed text-[48px] text-[#fff] mb-5 fullscreen:mb-[85px] max-[768px]:text-[24px] fullscreen:text-9xl">
+          Government Partner
+        </div> */}
+        {/* <div className="w-full flex flex-wrap gap-[5px] mb-16">
           <TierParners
             partners={Array(5)
               .fill("")
@@ -126,7 +146,7 @@ const HomeSection6 = () => {
                 };
               })}
           />
-        </div>
+        </div> */}
         {/* <div className="w-full font-neueMed text-[48px] text-[#fff] mb-5 max-[768px]:text-[24px]">
           Media
         </div>
