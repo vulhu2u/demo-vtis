@@ -9,6 +9,7 @@ export default function Header() {
   //   const pathname = usePathname();
   const [activeTab, setActiveTab] = useState("");
   const [isOpenMobileMenu, setIsOpenMobileMenu] = useState(false);
+
   return (
     <>
       <header className="sticky top-0 mt-0 items-center justify-between w-full bg-[#000000] text-white z-50">
@@ -41,10 +42,18 @@ export default function Header() {
 
           {/* Action Button */}
           <div className="flex flex-1 justify-end items-center gap-2 tablet:gap-1">
-            <button className=" h-12 fullscreen:w-[410px] fullscreen:h-[128px] hidden laptop:flex bg-[#ffffff26] px-6 py-4 font-neueMed fullscreen:text-[42px] text-center laptop:items-center laptop:hover:bg-white laptop:hover:text-black transition duration-500 fullscreen:px-16 fullscreen:py-8">
+            <Link
+              href="https://docs.google.com/forms/d/e/1FAIpQLSdnx0Knyzusil9koJIXf_Ol0-Bdh91xKhbhjhVKbiD_uIGpuw/viewform"
+              target="_blank"
+              className="h-12 fullscreen:w-[410px] fullscreen:h-[128px] hidden laptop:flex bg-[#ffffff26] px-6 py-4 font-neueMed fullscreen:text-[42px] text-center laptop:items-center laptop:hover:bg-white laptop:hover:text-black transition duration-500 fullscreen:px-16 fullscreen:py-8"
+            >
               Partner with Us
-            </button>
-            <button className="relative group overflow-hidden bg-white hover:bg-[#2FD3DD] transition-all duration-500">
+            </Link>
+            <Link
+              href="https://app.moongate.id/e/vtis24"
+              target="_blank"
+              className="relative group overflow-hidden bg-white hover:bg-[#2FD3DD] transition-all duration-500"
+            >
               <ImageBase.GetTicketImg
                 fill-color="#000"
                 className={`w-auto tablet:h-[48px] fullscreen:h-[128px]`}
@@ -53,7 +62,7 @@ export default function Header() {
                 <div>Get Ticket</div>
                 <div>Get Ticket</div>
               </div>
-            </button>
+            </Link>
             {/* Menu Bar Mobile */}
             <div className="laptop:hidden z-50">
               {isOpenMobileMenu ? (
@@ -75,7 +84,10 @@ export default function Header() {
           </div>
         </div>
       </header>
-      <SideBarMenu isOpen={isOpenMobileMenu}  onClose={()=> setIsOpenMobileMenu(false)} />
+      <SideBarMenu
+        isOpen={isOpenMobileMenu}
+        onClose={() => setIsOpenMobileMenu(false)}
+      />
     </>
   );
 }
